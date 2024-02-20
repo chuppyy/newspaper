@@ -15,7 +15,7 @@ export default function Page(data: any) {
       <Head>
         <title>{article.name}</title>
         <meta property="og:image" content={article.avatarLink} />
-        <meta property="og:title" content={article.name} />
+        <meta property="og:title" content={article.summary} />
       </Head>
       <main>
         <Script src="/qcscript.js" />
