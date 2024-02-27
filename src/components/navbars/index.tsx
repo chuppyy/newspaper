@@ -55,7 +55,7 @@ export default function Navbar() {
           <Link className="navlink-item" href="/terms">
             Terms & Conditions
           </Link>
-          <Link className="navlink-item" href="/privacy">
+          <Link className="navlink-item" href="/privacy-policy">
             Privacy
           </Link>
         </div>
