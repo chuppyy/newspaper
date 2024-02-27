@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense,useEffect  } from "react";
 import { GetServerSideProps } from "next";
 import Script from "next/script";
 import axios from "axios";
@@ -10,6 +10,21 @@ const formatDate = (str: string) => {
 
 export default function Page(data: any) {
   const article = data.data;
+  useEffect(() => {
+    const iframe = document.querySelector(".content iframe");
+    const handleIframeLoad = () => {
+      if (iframe) {
+        iframe.style.height = '800px'
+        iframe.style.width = '100%'
+      }
+    };
+    if (iframe) {
+      iframe.addEventListener("load", handleIframeLoad);
+      return () => {
+        iframe.removeEventListener("load", handleIframeLoad);
+      };
+    }
+  }, []);
   return (
     <>
       <Head>
