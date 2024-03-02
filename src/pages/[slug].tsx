@@ -51,7 +51,10 @@ export default function Page(data: any) {
 export const getServerSideProps: GetServerSideProps<any> = async (context) => {
   try {
     // caching
-    context.res.setHeader('Cache-Control', 's-maxage=3600')
+    context.res.setHeader(
+      "Cache-Control",
+      "s-maxage=3600 ,stale-white-revalidate=3600"
+    );
     const slug = context.params?.slug;
     const response = await axios.get(
       `${process.env.APP_API}/News/news-detail?id=${slug?.slice(
