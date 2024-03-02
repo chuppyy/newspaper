@@ -1,4 +1,4 @@
-import { Suspense,useEffect  } from "react";
+import { Suspense, useEffect } from "react";
 import { GetServerSideProps } from "next";
 import Script from "next/script";
 import axios from "axios";
@@ -11,7 +11,7 @@ const formatDate = (str: string) => {
 export default function Page(data: any) {
   const article = data.data;
   useEffect(() => {
-    const iframe =  document.querySelector<HTMLIFrameElement>('.content iframe');
+    const iframe = document.querySelector<HTMLIFrameElement>('.content iframe');
     const handleIframeLoad = () => {
       if (iframe) {
         iframe.style.height = '800px'
@@ -35,9 +35,9 @@ export default function Page(data: any) {
       <main>
         <Script src="/qcscript.js" />
         <div className="container-flu details">
-                  <div id="M936537ScriptRootC1576310"></div>
+          <div id="M936537ScriptRootC1576310"></div>
           <script
-                      src="https://jsc.adskeeper.com/s/p/sportnews.thongtinluat.com.1576310.js"
+            src="https://jsc.adskeeper.com/s/p/sportnews.thongtinluat.com.1576310.js"
             async
           ></script>
 
@@ -52,9 +52,9 @@ export default function Page(data: any) {
             />
           </Suspense>
         </div>
-              <div id="M936537ScriptRootC1576309"></div>
+        <div id="M936537ScriptRootC1576309"></div>
         <script
-                  src="https://jsc.adskeeper.com/s/p/sportnews.thongtinluat.com.1576309.js"
+          src="https://jsc.adskeeper.com/s/p/sportnews.thongtinluat.com.1576309.js"
           async
         ></script>
       </main>
@@ -65,13 +65,9 @@ export default function Page(data: any) {
 export const getServerSideProps: GetServerSideProps<any> = async ({
   params,
 }) => {
-    try {
-        
-    // const response = await axios.get(
-    //     `${process.env.APP_API}/News/news-detail?id=${params?.slug?.slice(params?.slug?.lastIndexOf("-") + 1) }`
-    // );
+  try {
     const response = await axios.get(
-      `${process.env.APP_API}/News/news-detail??id=${params?.slug?.slice(params?.slug?.lastIndexOf("-") + 1) }`,
+      `${process.env.APP_API}/News/news-detail?id=${params?.slug?.slice(params?.slug?.lastIndexOf("-") + 1)}`,
       {
         headers: {
           'Cache-Control': 'force-cache',
