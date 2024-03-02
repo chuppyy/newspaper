@@ -55,14 +55,16 @@ export const getServerSideProps: GetServerSideProps<any> = async (context) => {
       "Cache-Control",
       "s-maxage=3600 ,stale-white-revalidate=3600"
     );
+
     const slug = context.params?.slug;
-    const response = await axios.get(
+    const response = await fetch(
       `${process.env.APP_API}/News/news-detail?id=${slug?.slice(
         slug?.lastIndexOf("-") + 1
-      )}`
-    );
+      )}`,
+      { next: { revalidate: 3600 }, cache: "force-cache" }
+    ).then((res) => res.json());
     return {
-      props: { data: response.data.data },
+      props: { data: response.data },
     };
   } catch (error) {
     console.error("Error fetching data:", error);
