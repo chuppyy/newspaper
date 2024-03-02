@@ -1,43 +1,66 @@
+import React, { useState } from "react";
 import { Suspense, useEffect } from "react";
 import { GetServerSideProps } from "next";
 import Script from "next/script";
-import axios from "axios";
 import Head from "next/head";
+
 const formatDate = (str: string) => {
   const date = new Date(str);
   return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 };
 
-export default function Page(data: any) {
-  const article = data.data;
+interface Article {
+  name: string;
+  avatarLink: string;
+  dateTimeStart: string;
+  content: string;
+}
+
+async function getData(slug: string) {
+  try {
+    const { data: article } = await fetch(
+      `https://apinewspaper.sportsandtravelonline.com/News/news-detail?id=${slug?.slice(
+        slug?.lastIndexOf("-") + 1
+      )}`
+    ).then((res) => res.json());
+    return article;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export default function Page({ slug }: any) {
+  const [article, setArticle] = useState<Article>();
   useEffect(() => {
-    const iframe = document.querySelector<HTMLIFrameElement>('.content iframe');
-    const handleIframeLoad = () => {
-      if (iframe) {
-        iframe.style.height = '800px'
-        iframe.style.width = '100%'
+    const fetchData = async () => {
+      try {
+        const res = await getData(slug);
+        setArticle(res);
+      } catch (error) {
+        console.error("Error fetching data:", error);
       }
     };
-    if (iframe) {
-      iframe.addEventListener("load", handleIframeLoad);
-      return () => {
-        iframe.removeEventListener("load", handleIframeLoad);
-      };
-    }
-  }, []);
+
+    fetchData();
+  }, [slug]);
+
+  if (!article) {
+    return <>Not content</>;
+  }
+
   return (
     <>
       <Head>
         <title>{article.name}</title>
         <meta property="og:image" content={article.avatarLink} />
-        <meta property="og:title" content={article.summary ? article.summary : article.name} />
+        <meta property="og:title" content={article.name} />
       </Head>
       <main>
         <Script src="/qcscript.js" />
         <div className="container-flu details">
-          <div id="M936537ScriptRootC1576310"></div>
+          <div id="M932897ScriptRootC1569683"></div>
           <script
-            src="https://jsc.adskeeper.com/s/p/sportnews.thongtinluat.com.1576310.js"
+            src="https://jsc.mgid.com/l/o/lovenews.sportsandtravelonline.com.1569683.js"
             async
           ></script>
 
@@ -52,9 +75,9 @@ export default function Page(data: any) {
             />
           </Suspense>
         </div>
-        <div id="M936537ScriptRootC1576309"></div>
+        <div id="M932897ScriptRootC1569677"></div>
         <script
-          src="https://jsc.adskeeper.com/s/p/sportnews.thongtinluat.com.1576309.js"
+          src="https://jsc.mgid.com/l/o/lovenews.sportsandtravelonline.com.1569677.js"
           async
         ></script>
       </main>
@@ -62,22 +85,12 @@ export default function Page(data: any) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps<any> = async ({
-  params,
-}) => {
-  try {
-    const response = await fetch(
-      `${process.env.APP_API}/News/news-detail?id=${params?.slug?.slice(
-        params?.slug?.lastIndexOf("-") + 1
-      )}`,{ next: { revalidate: 3600 } }
-    ).then((res) => res.json());
-    return {
-      props: { data: response.data },
-    };
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return {
-      props: { data: [] as any[] }, // Use any type for data
-    };
-  }
+// Lấy props cho trang dựa trên slug
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+  const slug = params?.slug;
+  return {
+    props: {
+      slug,
+    },
+  };
 };
