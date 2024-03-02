@@ -1,52 +1,15 @@
-import React, { useState } from "react";
 import { Suspense, useEffect } from "react";
 import { GetServerSideProps } from "next";
 import Script from "next/script";
+import axios from "axios";
 import Head from "next/head";
-
 const formatDate = (str: string) => {
   const date = new Date(str);
   return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 };
 
-interface Article {
-  name: string;
-  avatarLink: string;
-  dateTimeStart: string;
-  content: string;
-}
-
-async function getData(slug: string) {
-  try {
-    const { data: article } = await fetch(
-      `https://apinewspaper.sportsandtravelonline.com/News/news-detail?id=${slug?.slice(
-        slug?.lastIndexOf("-") + 1
-      )}`
-    ).then((res) => res.json());
-    return article;
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-export default function Page({ slug }: any) {
-  const [article, setArticle] = useState<Article>();
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await getData(slug);
-        setArticle(res);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, [slug]);
-
-  if (!article) {
-    return <>Not content</>;
-  }
+export default function Page(data: any) {
+  const article = data.data;
 
   return (
     <>
@@ -85,12 +48,23 @@ export default function Page({ slug }: any) {
   );
 }
 
-// Lấy props cho trang dựa trên slug
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  const slug = params?.slug;
-  return {
-    props: {
-      slug,
-    },
-  };
+export const getServerSideProps: GetServerSideProps<any> = async (context) => {
+  try {
+    // caching
+    context.res.setHeader('Cache-Control', 's-maxage=3600')
+    const slug = context.params?.slug;
+    const response = await axios.get(
+      `${process.env.APP_API}/News/news-detail?id=${slug?.slice(
+        slug?.lastIndexOf("-") + 1
+      )}`
+    );
+    return {
+      props: { data: response.data.data },
+    };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return {
+      props: { data: [] as any[] }, // Use any type for data
+    };
+  }
 };
