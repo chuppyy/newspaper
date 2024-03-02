@@ -66,21 +66,18 @@ export const getServerSideProps: GetServerSideProps<any> = async ({
   params,
 }) => {
   try {
-    const response = await axios.get(
-      `${process.env.APP_API}/News/news-detail?id=${params?.slug?.slice(params?.slug?.lastIndexOf("-") + 1)}`,
-      {
-        headers: {
-          'Cache-Control': 'force-cache',
-        },
-      }
-    );
+    const response = await fetch(
+      `${process.env.APP_API}/News/news-detail?id=${params?.slug?.slice(
+        params?.slug?.lastIndexOf("-") + 1
+      )}`,{ next: { revalidate: 3600 } }
+    ).then((res) => res.json());
     return {
-      props: { data: response.data.data },
+      props: { data: response.data },
     };
   } catch (error) {
     console.error("Error fetching data:", error);
     return {
-      props: { data: [] as any[] }, // Sử dụng any type cho data
+      props: { data: [] as any[] }, // Use any type for data
     };
   }
 };
