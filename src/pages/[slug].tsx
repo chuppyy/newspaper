@@ -1,8 +1,7 @@
-import { Suspense, useEffect } from "react";
-import { GetServerSideProps } from "next";
+import { Suspense } from "react";
 import Script from "next/script";
-import axios from "axios";
 import Head from "next/head";
+
 const formatDate = (str: string) => {
   const date = new Date(str);
   return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
@@ -48,28 +47,27 @@ export default function Page(data: any) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps<any> = async (context) => {
-  try {
-    // caching
-    context.res.setHeader(
-      "Cache-Control",
-      "s-maxage=3600 ,stale-white-revalidate=3600"
-    );
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: "blocking",
+  };
+}
 
-    const slug = context.params?.slug;
+export async function getStaticProps({ params }: { params: any }) {
+  try {
+    const slug = params?.slug;
     const response = await fetch(
       `${process.env.APP_API}/News/news-detail?id=${slug?.slice(
         slug?.lastIndexOf("-") + 1
       )}`,
-      { next: { revalidate: 3600 }, cache: "force-cache" }
     ).then((res) => res.json());
     return {
       props: { data: response.data },
     };
   } catch (error) {
-    console.error("Error fetching data:", error);
     return {
-      props: { data: [] as any[] }, // Use any type for data
+      props: { data: {} },
     };
   }
-};
+}
