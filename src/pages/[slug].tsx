@@ -64,6 +64,7 @@ export async function getStaticProps({ params }: { params: any }) {
     ).then((res) => res.json());
     return {
       props: { data: response.data },
+      revalidate: 60
     };
   } catch (error) {
     return {
