@@ -1,6 +1,11 @@
 // components/ConsentBanner.js
 import React, { useState, useEffect } from 'react';
 
+// Function to update consent status
+export const updateConsent = (params: any) => {
+    window.gtag('consent', 'update', params);
+};
+
 const ConsentBanner = () => {
     const [isAskCookies, setIsAskCookies] = useState(false);
 
@@ -13,8 +18,8 @@ const ConsentBanner = () => {
     }, []);
 
     const handleConsent = () => {
-        gtag('consent', 'update', {
-            'ad_storage': 'granted'
+        updateConsent({
+            ad_storage: "granted",
         });
 
         // Save consent status to localStorage
