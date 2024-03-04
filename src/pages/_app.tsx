@@ -1,6 +1,7 @@
 import Head from "next/head";
 import App, { AppProps, AppContext } from "next/app";
 import Layout from "../layouts/layout";
+import AcceptCookie from "@/components/popup/index"
 import '../globals.css'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
@@ -12,6 +13,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
       <Layout>
         <Component {...pageProps} />
+        <AcceptCookie />
       </Layout>
     </>
   );

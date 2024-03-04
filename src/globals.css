@@ -173,6 +173,23 @@ footer {
   font-weight: 600;
 }
 
+/* popup */
+.consent-banner {
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e90ff;
+  padding: 20px 0px;
+  gap:10px;
+  width: 100%;
+}
+
+.consent-banner button {
+  
+}
+
 @media (max-width: 525px) {
   /* navbar */
   /* sss */
