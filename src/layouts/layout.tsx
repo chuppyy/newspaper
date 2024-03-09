@@ -1,3 +1,5 @@
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import CookieBanner from "@/components/cookiebanner";
 import Navbar from "@/components/navbars";
 import React, { ReactNode } from "react";
 
@@ -10,8 +12,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div>
       <header>
         <Navbar />
+        <GoogleAnalytics GA_MEASUREMENT_ID='G-YSM71MQHG7'/>
       </header>
-      <main>{children}</main>
+      <main>
+
+        {children}
+        <CookieBanner />
+        </main>
       <footer>
         <p>© {new Date().getFullYear()} - TKT</p>
       </footer>
