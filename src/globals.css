@@ -204,6 +204,11 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 @media (max-width: 525px) {
   /* navbar */
   /* sss */
@@ -261,5 +266,11 @@ a {
   .details {
     padding: 0 20px;
     text-align: justify;
+  }
+
+  .cookie-banner {
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px 5px;
   }
 }
