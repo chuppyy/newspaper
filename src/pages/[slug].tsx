@@ -33,12 +33,12 @@ export default function Page(data: any) {
 
             // Tạo thẻ div cho script
             var scriptDiv = document.createElement("div");
-            scriptDiv.id = "M936535ScriptRootC1583648";
+            scriptDiv.id = "M942715ScriptRootC1596351";
             scriptContainer.appendChild(scriptDiv);
 
             // Tạo thẻ script
             var scriptTag = document.createElement("script");
-            scriptTag.src = "https://jsc.adskeeper.com/c/e/celebrity.thongtinluat.com.1583648.js";
+            scriptTag.src = "https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596351.js";
             scriptTag.async = true;
             //  scriptContainer.appendChild(scriptTag);
 
@@ -59,12 +59,12 @@ export default function Page(data: any) {
 
             // Tạo thẻ div cho script
             var scriptDiv = document.createElement("div");
-            scriptDiv.id = "M936538ScriptRootC1576110";
+            scriptDiv.id = "M942715ScriptRootC1596350";
             scriptContainer.appendChild(scriptDiv);
 
             // Tạo thẻ script
             var scriptTag = document.createElement("script");
-            scriptTag.src = "https://jsc.adskeeper.com/d/a/dailynews.thongtinluat.com.1576110.js";
+            scriptTag.src = "https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596350.js";
             scriptTag.async = true;
             //  scriptContainer.appendChild(scriptTag);
 
@@ -79,7 +79,7 @@ export default function Page(data: any) {
             ampTag.setAttribute("type", "mgid");
             ampTag.setAttribute("data-publisher", "vbonews.com");
             ampTag.setAttribute("data-widget", "1569695");
-            ampTag.setAttribute("data-container", "M936538ScriptRootC1576110");
+            ampTag.setAttribute("data-container", "M942715ScriptRootC1596350");
             ampTag.setAttribute("data-block-on-consent", "_till_responded");
             scriptContainer.appendChild(ampTag);
 
@@ -101,12 +101,12 @@ export default function Page(data: any) {
 
             // Tạo thẻ div cho script
             var scriptDiv = document.createElement("div");
-            scriptDiv.id = "M936538ScriptRootC1576110";
+            scriptDiv.id = "M942715ScriptRootC1596350";
             scriptContainer.appendChild(scriptDiv);
 
             // Tạo thẻ script
             var scriptTag = document.createElement("script");
-            scriptTag.src = "https://jsc.adskeeper.com/d/a/dailynews.thongtinluat.com.1576110.js";
+            scriptTag.src = "https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596350.js";
             scriptTag.async = true;
             //  scriptContainer.appendChild(scriptTag);
 
@@ -121,7 +121,7 @@ export default function Page(data: any) {
             ampTag.setAttribute("type", "mgid");
             ampTag.setAttribute("data-publisher", "vbonews.com");
             ampTag.setAttribute("data-widget", "1569695");
-            ampTag.setAttribute("data-container", "M936538ScriptRootC1576110");
+            ampTag.setAttribute("data-container", "M942715ScriptRootC1596350");
             ampTag.setAttribute("data-block-on-consent", "_till_responded");
             scriptContainer.appendChild(ampTag);
 
@@ -193,11 +193,12 @@ export default function Page(data: any) {
             />
           </Suspense>
         </div>
-        <div id="M936538ScriptRootC1576108"></div>
-        <script
-          src="https://jsc.adskeeper.com/d/a/dailynews.thongtinluat.com.1576108.js"
-          async
-        ></script>
+        <!-- Composite Start -->
+	<div id="M942715ScriptRootC1596349"></div>
+	<script src="https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596349.js" async>
+	</script>
+	<!-- Composite End -->
+
       </main>
     </>
   );
