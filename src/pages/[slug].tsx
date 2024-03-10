@@ -193,11 +193,11 @@ export default function Page(data: any) {
             />
           </Suspense>
         </div>
-        <!-- Composite Start -->
+      
 	<div id="M942715ScriptRootC1596349"></div>
 	<script src="https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596349.js" async>
 	</script>
-	<!-- Composite End -->
+	
 
       </main>
     </>
