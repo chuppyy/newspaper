@@ -1,5 +1,5 @@
 import GoogleAnalytics from "@/components/GoogleAnalytics";
-import CookieBanner from "@/components/cookiebanner";
+//import CookieBanner from "@/components/cookiebanner";
 import Navbar from "@/components/navbars";
 import React, { ReactNode } from "react";
 
