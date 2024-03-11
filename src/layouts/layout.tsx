@@ -17,7 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <main>
 
         {children}
-        <CookieBanner />
+       // <CookieBanner />
         </main>
       <footer>
         <p>© {new Date().getFullYear()} - TKT</p>
