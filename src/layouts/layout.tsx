@@ -12,7 +12,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div>
       <header>
         <Navbar />
-        <GoogleAnalytics GA_MEASUREMENT_ID='G-YSM71MQHG7'/>
+       // <GoogleAnalytics GA_MEASUREMENT_ID='G-YSM71MQHG7'/>
       </header>
       <main>
 
