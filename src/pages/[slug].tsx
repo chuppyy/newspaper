@@ -146,8 +146,9 @@ export default function Page(data: any) {
     const iframes = document.querySelectorAll("iframe");
     iframes.forEach((iframe: HTMLIFrameElement) => {
       if (iframe) {
-        iframe.style.height = `${560}px`;
+        iframe.style.height = window.innerWidth <= 525 ? "530px" : `${776}px`;
         iframe.style.display = "block";
+        iframe.style.width = window.innerWidth <= 525 ? "100%" : "500px";
         iframe.style.margin = "0 auto";
       }
     });
