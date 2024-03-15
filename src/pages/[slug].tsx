@@ -149,7 +149,7 @@ export default function Page(data: any) {
     iframes.forEach((iframe: HTMLIFrameElement) => {
       if (iframe) {
         if (iframe.src.includes("twitter")) {
-          iframe.style.height = window.innerWidth <= 525 ? "587px" : "827px";
+          iframe.style.height = window.innerWidth <= 525 ? "600px" : "827px";
           iframe.style.display = "block";
           iframe.style.width = window.innerWidth <= 525 ? "100%" : "550px";
           iframe.style.margin = "0 auto";
@@ -158,9 +158,11 @@ export default function Page(data: any) {
           iframe.style.display = "block";
           iframe.style.width = window.innerWidth <= 525 ? "100%" : "100%";
           iframe.style.margin = "0 auto";
-        }else{        
-             iframe.style.height = '400px'
-            iframe.style.width = '100%'
+        }else{    
+               iframe.style.height = window.innerWidth <= 525 ? "300px" : "400px";
+          iframe.style.display = "block";
+          iframe.style.width = window.innerWidth <= 525 ? "100%" : "100%";
+          iframe.style.margin = "0 auto";
         }
       }
     });
