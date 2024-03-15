@@ -151,7 +151,7 @@ export default function Page(data: any) {
         if (iframe.src.includes("twitter")) {
           iframe.style.height = window.innerWidth <= 525 ? "587px" : "827px";
           iframe.style.display = "block";
-          iframe.style.width = window.innerWidth <= 525 ? "342" : "550px";
+          iframe.style.width = window.innerWidth <= 525 ? "100%" : "550px";
           iframe.style.margin = "0 auto";
         }else if (iframe.src.includes("instagram")) {
           iframe.style.height = window.innerWidth <= 525 ? "553px" : `${628}px`;
@@ -160,7 +160,7 @@ export default function Page(data: any) {
           iframe.style.margin = "0 auto";
         }else{        
              iframe.style.height = '400px'
-            iframe.style.width = '700px'
+            iframe.style.width = '100%'
         }
       }
     });
