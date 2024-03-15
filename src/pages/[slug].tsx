@@ -154,7 +154,7 @@ export default function Page(data: any) {
           iframe.style.width = window.innerWidth <= 525 ? "342" : "550px";
           iframe.style.margin = "0 auto";
         }else if (iframe.src.includes("instagram")) {
-          iframe.style.height = window.innerWidth <= 525 ? "513px" : `${513}px`;
+          iframe.style.height = window.innerWidth <= 525 ? "553px" : `${628}px`;
           iframe.style.display = "block";
           iframe.style.width = window.innerWidth <= 525 ? "100%" : "100%";
           iframe.style.margin = "0 auto";
