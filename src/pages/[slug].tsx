@@ -149,18 +149,19 @@ export default function Page(data: any) {
     iframes.forEach((iframe: HTMLIFrameElement) => {
       if (iframe) {
         if (iframe.src.includes("twitter")) {
-      iframe.style.height = window.innerWidth <= 525 ? "587px" : "827px";
-      iframe.style.display = "block";
-      iframe.style.width = window.innerWidth <= 525 ? "342" : "550px";
-      iframe.style.margin = "0 auto";
-    }else if (iframe.src.includes("instagram")) {
-      iframe.style.height = window.innerWidth <= 525 ? "513px" : `${513}px`;
-      iframe.style.display = "block";
-      iframe.style.width = window.innerWidth <= 525 ? "100%" : "100%";
-      iframe.style.margin = "0 auto";
-    }else{        
-         iframe.style.height = '400px'
-        iframe.style.width = '700px'
+          iframe.style.height = window.innerWidth <= 525 ? "587px" : "827px";
+          iframe.style.display = "block";
+          iframe.style.width = window.innerWidth <= 525 ? "342" : "550px";
+          iframe.style.margin = "0 auto";
+        }else if (iframe.src.includes("instagram")) {
+          iframe.style.height = window.innerWidth <= 525 ? "513px" : `${513}px`;
+          iframe.style.display = "block";
+          iframe.style.width = window.innerWidth <= 525 ? "100%" : "100%";
+          iframe.style.margin = "0 auto";
+        }else{        
+             iframe.style.height = '400px'
+            iframe.style.width = '700px'
+        }
       }
     });
   // get all instagram
@@ -171,7 +172,7 @@ export default function Page(data: any) {
       instagram.style.display = "block";
       instagram.style.width = window.innerWidth <= 525 ? "100%" : "100%";
       instagram.style.margin = "0 auto"; 
-        
+      }
     });
 
 
