@@ -166,7 +166,7 @@ export default function Page(data: any) {
     });
   // get all instagram
     const instagrams = document.querySelectorAll("amp-instagram");
-    instagrams.forEach((instagram: HTMLIFrameElement) => {
+    instagrams.forEach((ampInstagram) => {
       if (instagram) {       
        instagram.style.height = window.innerWidth <= 525 ? "513px" : `${513}px`;
       instagram.style.display = "block";
