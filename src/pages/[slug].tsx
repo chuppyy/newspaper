@@ -164,14 +164,7 @@ export default function Page(data: any) {
         }
       }
     });
-  // get all instagram
-    const instagrams = document.querySelectorAll("amp-instagram");
-    instagrams.forEach((instagram) => {
-      if (instagram) {       
-        instagrams.setAttribute("width", "100%");
-      instagrams.setAttribute("height", "513px");
-      }
-    });
+
 
 
     
