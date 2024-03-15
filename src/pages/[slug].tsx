@@ -168,10 +168,8 @@ export default function Page(data: any) {
     const instagrams = document.querySelectorAll("amp-instagram");
     instagrams.forEach((instagram) => {
       if (instagram) {       
-       instagram.style.height = window.innerWidth <= 525 ? "513px" : `${513}px`;
-      instagram.style.display = "block";
-      instagram.style.width = window.innerWidth <= 525 ? "100%" : "100%";
-      instagram.style.margin = "0 auto"; 
+        instagrams.setAttribute("width", "100%");
+      instagrams.setAttribute("height", "513px");
       }
     });
 
