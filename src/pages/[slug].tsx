@@ -220,7 +220,7 @@ if(1==1){
             data-full-width-responsive="true"
           />
 
-          <h1>{article.name}</h1>
+          <h1>{article.summary ? article.summary : article.name}</h1>
 
           <p className="mb-4 text-lg">
             Posted: {formatDate(article.dateTimeStart)}
