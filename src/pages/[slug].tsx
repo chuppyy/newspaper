@@ -177,7 +177,7 @@ export default function Page(data: any) {
           content={article.summary ? article.summary : article.name}
         />
       </Head>
-      <Script
+      <Script id="adskeeper-1"
         src="https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596349.js"
         strategy="lazyOnload"
       />
