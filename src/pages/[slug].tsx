@@ -178,6 +178,10 @@ export default function Page(data: any) {
         />
       </Head>
       <Script
+        src="https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596349.js"
+        strategy="lazyOnload"
+      />
+      <Script
         id="gg-1"
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=G-YSM71MQHG7`}
@@ -234,10 +238,10 @@ export default function Page(data: any) {
         </div>
 
         <div id="M942715ScriptRootC1596349"></div>
-        <script
+        {/* <script
           src="https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596349.js"
           async
-        ></script>
+        ></script> */}
       </main>
     </>
   );
