@@ -13,125 +13,125 @@ export default function Page(data: any) {
   const [iframeHeight, setIframeHeight] = useState<number | null>(null);
   useEffect(() => {
     try {
-      var qcImgDiv = document.getElementById("qcImg");
+      setTimeout(() => {
+        var qcImgDiv = document.getElementById("qcImg");
 
-      if (qcImgDiv) {
-        var insElement = document.createElement("ins");
-        insElement.className = "adsbygoogle";
-        insElement.style.display = "block";
-        insElement.setAttribute("data-ad-client", "ca-pub-3619133031508264");
-        insElement.setAttribute("data-ad-slot", "9137554578");
-        insElement.setAttribute("data-ad-format", "auto");
-        insElement.setAttribute("data-full-width-responsive", "true");
+        if (qcImgDiv) {
+          var insElement = document.createElement("ins");
+          insElement.className = "adsbygoogle";
+          insElement.style.display = "block";
+          insElement.setAttribute("data-ad-client", "ca-pub-3619133031508264");
+          insElement.setAttribute("data-ad-slot", "9137554578");
+          insElement.setAttribute("data-ad-format", "auto");
+          insElement.setAttribute("data-full-width-responsive", "true");
 
-        // Chèn đối tượng ins vào thẻ div
-        qcImgDiv.appendChild(insElement);
-      }
-      var qcDivqc3 = document.getElementById("qcmgidgb3");
-      if (qcDivqc3) {
-        // Tạo một thẻ div mới để chứa script và amp-embed
-        var scriptContainer = document.createElement("div");
-
-        // Tạo thẻ div cho script
-        var scriptDiv = document.createElement("div");
-        scriptDiv.id = "M942715ScriptRootC1596351";
-        scriptContainer.appendChild(scriptDiv);
-
-        // Tạo thẻ script
-        var scriptTag = document.createElement("script");
-        scriptTag.src =
-          "https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596351.js";
-        scriptTag.async = true;
-        //  scriptContainer.appendChild(scriptTag);
-
-        // Chèn scriptContainer vào thẻ div "qc"
-        qcDivqc3.appendChild(scriptContainer);
-        qcDivqc3.appendChild(scriptTag);
-      }
-if(1==1){
-  
-}
-  else    if (window.innerWidth <= 500) {
-        // Giua bai mgid
-
-        // Chọn thẻ div có ID "qc"
-        var qcDiv = document.getElementById("qcmgidgb");
-        if (qcDiv) {
+          // Chèn đối tượng ins vào thẻ div
+          qcImgDiv.appendChild(insElement);
+        }
+        var qcDivqc3 = document.getElementById("qcmgidgb3");
+        if (qcDivqc3) {
           // Tạo một thẻ div mới để chứa script và amp-embed
           var scriptContainer = document.createElement("div");
 
           // Tạo thẻ div cho script
           var scriptDiv = document.createElement("div");
-          scriptDiv.id = "M942715ScriptRootC1596350";
+          scriptDiv.id = "M942715ScriptRootC1596351";
           scriptContainer.appendChild(scriptDiv);
 
           // Tạo thẻ script
           var scriptTag = document.createElement("script");
           scriptTag.src =
-            "https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596350.js";
+            "https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596351.js";
           scriptTag.async = true;
           //  scriptContainer.appendChild(scriptTag);
 
           // Chèn scriptContainer vào thẻ div "qc"
-          qcDiv.appendChild(scriptContainer);
-          qcDiv.appendChild(scriptTag);
-          // Chèn đoạn mã AMP
-          var ampTag = document.createElement("amp-embed");
-          ampTag.setAttribute("width", "600");
-          ampTag.setAttribute("height", "600");
-          ampTag.setAttribute("layout", "responsive");
-          ampTag.setAttribute("type", "mgid");
-          ampTag.setAttribute("data-publisher", "vbonews.com");
-          ampTag.setAttribute("data-widget", "1569695");
-          ampTag.setAttribute("data-container", "M942715ScriptRootC1596350");
-          ampTag.setAttribute("data-block-on-consent", "_till_responded");
-          scriptContainer.appendChild(ampTag);
-
-          // Chèn scriptContainer vào thẻ div "qc"
-          qcDiv.appendChild(scriptContainer);
+          qcDivqc3.appendChild(scriptContainer);
+          qcDivqc3.appendChild(scriptTag);
         }
-      }
-      //Destop
-      else {
-        // Giua bai mgid
+        if (1 == 1) {
+        } else if (window.innerWidth <= 500) {
+          // Giua bai mgid
 
-        // Chọn thẻ div có ID "qc"
-        var qcDiv = document.getElementById("qcmgidgb");
-        if (qcDiv) {
-          // Tạo một thẻ div mới để chứa script và amp-embed
-          var scriptContainer = document.createElement("div");
+          // Chọn thẻ div có ID "qc"
+          var qcDiv = document.getElementById("qcmgidgb");
+          if (qcDiv) {
+            // Tạo một thẻ div mới để chứa script và amp-embed
+            var scriptContainer = document.createElement("div");
 
-          // Tạo thẻ div cho script
-          var scriptDiv = document.createElement("div");
-          scriptDiv.id = "M942715ScriptRootC1596350";
-          scriptContainer.appendChild(scriptDiv);
+            // Tạo thẻ div cho script
+            var scriptDiv = document.createElement("div");
+            scriptDiv.id = "M942715ScriptRootC1596350";
+            scriptContainer.appendChild(scriptDiv);
 
-          // Tạo thẻ script
-          var scriptTag = document.createElement("script");
-          scriptTag.src =
-            "https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596350.js";
-          scriptTag.async = true;
-          //  scriptContainer.appendChild(scriptTag);
+            // Tạo thẻ script
+            var scriptTag = document.createElement("script");
+            scriptTag.src =
+              "https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596350.js";
+            scriptTag.async = true;
+            //  scriptContainer.appendChild(scriptTag);
 
-          // Chèn scriptContainer vào thẻ div "qc"
-          qcDiv.appendChild(scriptContainer);
-          qcDiv.appendChild(scriptTag);
-          // Chèn đoạn mã AMP
-          var ampTag = document.createElement("amp-embed");
-          ampTag.setAttribute("width", "600");
-          ampTag.setAttribute("height", "600");
-          ampTag.setAttribute("layout", "responsive");
-          ampTag.setAttribute("type", "mgid");
-          ampTag.setAttribute("data-publisher", "vbonews.com");
-          ampTag.setAttribute("data-widget", "1569695");
-          ampTag.setAttribute("data-container", "M942715ScriptRootC1596350");
-          ampTag.setAttribute("data-block-on-consent", "_till_responded");
-          scriptContainer.appendChild(ampTag);
+            // Chèn scriptContainer vào thẻ div "qc"
+            qcDiv.appendChild(scriptContainer);
+            qcDiv.appendChild(scriptTag);
+            // Chèn đoạn mã AMP
+            var ampTag = document.createElement("amp-embed");
+            ampTag.setAttribute("width", "600");
+            ampTag.setAttribute("height", "600");
+            ampTag.setAttribute("layout", "responsive");
+            ampTag.setAttribute("type", "mgid");
+            ampTag.setAttribute("data-publisher", "vbonews.com");
+            ampTag.setAttribute("data-widget", "1569695");
+            ampTag.setAttribute("data-container", "M942715ScriptRootC1596350");
+            ampTag.setAttribute("data-block-on-consent", "_till_responded");
+            scriptContainer.appendChild(ampTag);
 
-          // Chèn scriptContainer vào thẻ div "qc"
-          qcDiv.appendChild(scriptContainer);
+            // Chèn scriptContainer vào thẻ div "qc"
+            qcDiv.appendChild(scriptContainer);
+          }
         }
-      }
+        //Destop
+        else {
+          // Giua bai mgid
+
+          // Chọn thẻ div có ID "qc"
+          var qcDiv = document.getElementById("qcmgidgb");
+          if (qcDiv) {
+            // Tạo một thẻ div mới để chứa script và amp-embed
+            var scriptContainer = document.createElement("div");
+
+            // Tạo thẻ div cho script
+            var scriptDiv = document.createElement("div");
+            scriptDiv.id = "M942715ScriptRootC1596350";
+            scriptContainer.appendChild(scriptDiv);
+
+            // Tạo thẻ script
+            var scriptTag = document.createElement("script");
+            scriptTag.src =
+              "https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596350.js";
+            scriptTag.async = true;
+            //  scriptContainer.appendChild(scriptTag);
+
+            // Chèn scriptContainer vào thẻ div "qc"
+            qcDiv.appendChild(scriptContainer);
+            qcDiv.appendChild(scriptTag);
+            // Chèn đoạn mã AMP
+            var ampTag = document.createElement("amp-embed");
+            ampTag.setAttribute("width", "600");
+            ampTag.setAttribute("height", "600");
+            ampTag.setAttribute("layout", "responsive");
+            ampTag.setAttribute("type", "mgid");
+            ampTag.setAttribute("data-publisher", "vbonews.com");
+            ampTag.setAttribute("data-widget", "1569695");
+            ampTag.setAttribute("data-container", "M942715ScriptRootC1596350");
+            ampTag.setAttribute("data-block-on-consent", "_till_responded");
+            scriptContainer.appendChild(ampTag);
+
+            // Chèn scriptContainer vào thẻ div "qc"
+            qcDiv.appendChild(scriptContainer);
+          }
+        }
+      }, 100);
       // push ads
 
       var ads = document.getElementsByClassName("adsbygoogle").length;
@@ -144,8 +144,6 @@ if(1==1){
       console.log("err2222");
     }
 
-
-    
     // get all iframe
     const iframes = document.querySelectorAll("iframe");
     iframes.forEach((iframe: HTMLIFrameElement) => {
@@ -155,23 +153,19 @@ if(1==1){
           iframe.style.display = "block";
           iframe.style.width = window.innerWidth <= 525 ? "100%" : "550px";
           iframe.style.margin = "0 auto";
-        }else if (iframe.src.includes("instagram")) {
+        } else if (iframe.src.includes("instagram")) {
           iframe.style.height = window.innerWidth <= 525 ? "553px" : `${628}px`;
           iframe.style.display = "block";
           iframe.style.width = window.innerWidth <= 525 ? "100%" : "100%";
           iframe.style.margin = "0 auto";
-        }else{    
-               iframe.style.height = window.innerWidth <= 525 ? "250px" : "300px";
+        } else {
+          iframe.style.height = window.innerWidth <= 525 ? "250px" : "300px";
           iframe.style.display = "block";
           iframe.style.width = window.innerWidth <= 525 ? "100%" : "100%";
           iframe.style.margin = "0 auto";
         }
       }
     });
-
-
-
-    
   }, []);
   return (
     <>
