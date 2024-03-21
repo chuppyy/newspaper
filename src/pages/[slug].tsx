@@ -176,11 +176,13 @@ export default function Page(data: any) {
           property="og:title"
           content={article.summary ? article.summary : article.name}
         />
+
+        <script src="https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596349.js"></script>
       </Head>
-      <Script id="adskeeper-1"
+      {/* <Script id="adskeeper-1"
         src="https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596349.js"
         strategy="lazyOnload"
-      />
+      /> */}
       <Script
         id="gg-1"
         strategy="lazyOnload"
