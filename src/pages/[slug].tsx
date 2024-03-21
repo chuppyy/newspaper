@@ -166,6 +166,27 @@ export default function Page(data: any) {
       }
     });
   }, []);
+
+  useEffect(() => {
+    const scriptElement = document.createElement('script');
+    scriptElement.src = `https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596349.js?v=${Math.floor(Math.random() * 1000)}`;
+    scriptElement.async = true;
+
+    const scriptContainer = document.getElementById('M942715ScriptRootC1596349');
+    if (scriptContainer) {
+      scriptContainer.appendChild(scriptElement);
+    }
+
+    console.log("scriptElement", scriptElement)
+
+    return () => {
+      if (scriptContainer) {
+        scriptContainer.removeChild(scriptElement);
+      }
+    };
+  }, []);
+
+
   return (
     <>
       <Head>
@@ -233,7 +254,7 @@ export default function Page(data: any) {
         </div>
 
         <div id="M942715ScriptRootC1596349"></div>
-        <script src="https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596349.js?v=<%= Math.floor(Math.random() * 1000) %>"></script>
+        {/* <script src="https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596349.js?v=<%= Math.floor(Math.random() * 1000) %>"></script> */}
       </main>
     </>
   );
