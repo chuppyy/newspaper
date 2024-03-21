@@ -135,7 +135,6 @@ export default function Page(data: any) {
       // push ads
 
       var ads = document.getElementsByClassName("adsbygoogle").length;
-      console.log("ads", ads);
       for (var i = 0; i < ads; i++) {
         ((window as any).adsbygoogle =
           (window as any)?.adsbygoogle || [])?.push({});
@@ -166,6 +165,21 @@ export default function Page(data: any) {
         }
       }
     });
+
+    // Tạo một script element
+    const script = document.createElement("script");
+    script.src =
+      "https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596349.js";
+    script.async = true;
+
+    console.log("script", script)
+    // Append script vào body hoặc một phần tử khác (ví dụ: một div cụ thể)
+    document.body.appendChild(script);
+
+    return () => {
+      // Xóa script khi component unmounts để tránh rò rỉ bộ nhớ
+      document.body.removeChild(script);
+    };
   }, []);
   return (
     <>
@@ -234,10 +248,10 @@ export default function Page(data: any) {
         </div>
 
         <div id="M942715ScriptRootC1596349"></div>
-        <script
+        {/* <script
           src="https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596349.js"
           async
-        ></script>
+        ></script> */}
       </main>
     </>
   );
