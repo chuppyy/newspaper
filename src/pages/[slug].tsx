@@ -176,13 +176,7 @@ export default function Page(data: any) {
           property="og:title"
           content={article.summary ? article.summary : article.name}
         />
-
-        <script src="https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596349.js"></script>
       </Head>
-      {/* <Script id="adskeeper-1"
-        src="https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596349.js"
-        strategy="lazyOnload"
-      /> */}
       <Script
         id="gg-1"
         strategy="lazyOnload"
@@ -240,10 +234,10 @@ export default function Page(data: any) {
         </div>
 
         <div id="M942715ScriptRootC1596349"></div>
-        {/* <script
+        <script
           src="https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596349.js"
           async
-        ></script> */}
+        ></script>
       </main>
     </>
   );
