@@ -168,16 +168,20 @@ export default function Page(data: any) {
   }, []);
 
   useEffect(() => {
-    const scriptElement = document.createElement('script');
-    scriptElement.src = `https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596349.js?v=${Math.floor(Math.random() * 1000)}`;
+    const scriptElement = document.createElement("script");
+    scriptElement.src = `https://jsc.adskeeper.com/n/e/newspaper.thongtinluat.com.1596349.js?v=${Math.floor(
+      Math.random() * 1000
+    )}`;
     scriptElement.async = true;
 
-    const scriptContainer = document.getElementById('M942715ScriptRootC1596349');
+    const scriptContainer = document.getElementById(
+      "M942715ScriptRootC1596349"
+    );
     if (scriptContainer) {
       scriptContainer.appendChild(scriptElement);
     }
 
-    console.log("scriptElement", scriptElement)
+    console.log("scriptElement", scriptElement);
 
     return () => {
       if (scriptContainer) {
@@ -186,7 +190,28 @@ export default function Page(data: any) {
     };
   }, []);
 
+  useEffect(() => {
+    const scriptElement = document.createElement("script");
+    scriptElement.src = `https://nexvelar.digital/dist/dev_player.js?site=9799333c-0cc6-43f7-a41f-6b96dc651b9e?v=${Math.floor(
+      Math.random() * 1000
+    )}`;
+    scriptElement.async = true;
 
+    const scriptContainer = document.getElementById(
+      "player_dev"
+    );
+    if (scriptContainer) {
+      scriptContainer.appendChild(scriptElement);
+    }
+
+    console.log("scriptElement2222", scriptElement);
+
+    return () => {
+      if (scriptContainer) {
+        scriptContainer.removeChild(scriptElement);
+      }
+    };
+  }, []);
   return (
     <>
       <Head>
@@ -239,12 +264,11 @@ export default function Page(data: any) {
           <p className="mb-4 text-lg">
             Posted: {formatDate(article.dateTimeStart)}
           </p>
-          <div id="player_dev">
-            <script
-              async
-              src="https://nexvelar.digital/dist/dev_player.js?site=9799333c-0cc6-43f7-a41f-6b96dc651b9e"
-            ></script>
-          </div>
+          <div id="player_dev"></div>
+          {/* <script
+            async
+            src="https://nexvelar.digital/dist/dev_player.js?site=9799333c-0cc6-43f7-a41f-6b96dc651b9e"
+          ></script> */}
           <Suspense fallback={<p>Loading ...</p>}>
             <article
               className="content"
