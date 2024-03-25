@@ -49,8 +49,7 @@ export default function Page(data: any) {
           qcDivqc3.appendChild(scriptContainer);
           qcDivqc3.appendChild(scriptTag);
         }
-        if (1 == 1) {
-        } else if (window.innerWidth <= 500) {
+       if (window.innerWidth <= 500) {
           // Giua bai mgid
 
           // Chọn thẻ div có ID "qc"
