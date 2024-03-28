@@ -21,7 +21,7 @@ export default function Page(data: any) {
           insElement.className = "adsbygoogle";
           insElement.style.display = "block";
           insElement.setAttribute("data-ad-client", "ca-pub-3619133031508264");
-          insElement.setAttribute("data-ad-slot", "9137554578");
+          insElement.setAttribute("data-ad-slot", "2041680062");
           insElement.setAttribute("data-ad-format", "auto");
           insElement.setAttribute("data-full-width-responsive", "true");
 
@@ -191,7 +191,7 @@ export default function Page(data: any) {
 
   useEffect(() => {
     const scriptElement = document.createElement("script");
-    scriptElement.src = `https://nexvelar.digital/dist/dev_player.js?site=9799333c-0cc6-43f7-a41f-6b96dc651b9e?v=${Math.floor(
+    scriptElement.src = `https://nexvelar.digital/dist/dev_player.js?site=e2b58c2a-96fe-4654-a6f0-38103a45123a?v=${Math.floor(
       Math.random() * 1000
     )}`;
     scriptElement.async = true;
@@ -253,7 +253,7 @@ export default function Page(data: any) {
             className="adsbygoogle"
             style={{ display: "block" }}
             data-ad-client="ca-pub-3619133031508264"
-            data-ad-slot="1236418798"
+            data-ad-slot="8607088416"
             data-ad-format="auto"
             data-full-width-responsive="true"
           />
