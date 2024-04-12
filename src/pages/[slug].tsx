@@ -13,7 +13,7 @@ export default function Page(data: any) {
   const [iframeHeight, setIframeHeight] = useState<number | null>(null);
   useEffect(() => {
     try {
-      setTimeout(() => {
+      //setTimeout(() => {
         var qcImgDiv = document.getElementById("qcImg");
 
         if (qcImgDiv) {
@@ -130,7 +130,7 @@ export default function Page(data: any) {
             qcDiv.appendChild(scriptContainer);
           }
         }
-      }, 100);
+      //}, 100);
       // push ads
 
       var ads = document.getElementsByClassName("adsbygoogle").length;
